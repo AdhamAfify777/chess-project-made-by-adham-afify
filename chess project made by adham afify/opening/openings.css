@@ -1,0 +1,691 @@
+/* ==============================
+   1. Global settings
+   ============================== */
+
+:root {
+    --bg: #080b0a;
+    --surface: #101613;
+    --surface-light: #151e19;
+    --green: #36d98a;
+    --green-dark: #123e2b;
+    --text: #f2f5f2;
+    --muted: #9aa79f;
+    --border: rgba(255, 255, 255, 0.09);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Keep links consistent */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+/* Green text accent */
+.green-text {
+    color: var(--green);
+}
+
+/* ==============================
+   2. Background effects
+   ============================== */
+
+.ambient {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    filter: blur(110px);
+    opacity: 0.13;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.ambient-one {
+    top: 150px;
+    left: -150px;
+    background: #00ff91;
+}
+
+.ambient-two {
+    top: 500px;
+    right: -200px;
+    background: #167b4d;
+}
+
+/* ==============================
+   3. Navigation bar
+   ============================== */
+
+.navbar {
+    min-height: 82px;
+    padding: 18px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(8, 11, 10, 0.85);
+    backdrop-filter: blur(14px);
+    position: relative;
+    z-index: 10;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.brand-icon {
+    color: var(--green);
+    font-size: 32px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 27px;
+}
+
+.nav-links a {
+    color: var(--muted);
+    font-size: 13px;
+    transition: color 0.25s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--green);
+}
+
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 7px 12px;
+    color: var(--text);
+    cursor: pointer;
+}
+
+/* ==============================
+   4. Main hero section
+   ============================== */
+
+.hero {
+    width: min(1180px, 86%);
+    min-height: 590px;
+    margin: auto;
+    padding: 85px 0;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 65px;
+}
+
+.eyebrow,
+.section-label {
+    color: var(--green);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 13px;
+    border: 1px solid rgba(54, 217, 138, 0.2);
+    border-radius: 5px;
+    background: rgba(54, 217, 138, 0.05);
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+    display: inline-block;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 12px rgba(54, 217, 138, 0.7);
+}
+
+.hero h1 {
+    margin: 27px 0 22px;
+    font-size: clamp(38px, 5vw, 62px);
+    line-height: 1.12;
+    letter-spacing: -2px;
+    font-weight: 800;
+}
+
+.hero h1 span,
+.coming-content h2 span {
+    color: var(--green);
+}
+
+.hero-description {
+    max-width: 500px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.hero-buttons {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 13px;
+}
+
+.primary-button,
+.secondary-button {
+    min-height: 47px;
+    padding: 12px 18px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    transition: transform 0.25s, background 0.25s;
+}
+
+.primary-button {
+    background: var(--green);
+    color: #06120b;
+}
+
+.primary-button span {
+    margin-left: 12px;
+}
+
+.primary-button:hover,
+.secondary-button:hover {
+    transform: translateY(-3px);
+}
+
+.primary-button:hover {
+    background: #6aefac;
+}
+
+.secondary-button {
+    border: 1px solid var(--border);
+    color: var(--text);
+}
+
+.secondary-button:hover {
+    background: var(--surface-light);
+}
+
+.hero-note {
+    margin-top: 32px;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.hero-note span:first-child {
+    color: var(--green);
+    font-size: 20px;
+}
+
+/* ==============================
+   5. Decorative chessboard
+   ============================== */
+
+.chess-art {
+    width: min(100%, 390px);
+    justify-self: center;
+    padding: 20px;
+    border: 1px solid rgba(54, 217, 138, 0.2);
+    border-radius: 12px;
+    background:
+        radial-gradient(circle at 50% 40%,
+        rgba(35, 112, 73, 0.18), transparent 65%),
+        #0d120f;
+    box-shadow: 0 25px 90px rgba(0, 0, 0, 0.35);
+    transform: rotate(1deg);
+    animation: float-board 5s ease-in-out infinite;
+}
+
+.board-label,
+.board-caption {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    color: var(--muted);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.board-label {
+    margin-bottom: 17px;
+}
+
+.mini-board {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    aspect-ratio: 1;
+    border: 5px solid #1c2921;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.mini-board span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1;
+    font-family: "Segoe UI Symbol", "DejaVu Sans", sans-serif;
+    font-size: clamp(18px, 3vw, 32px);
+    color: #e7f4e9;
+    text-shadow: 0 2px 4px #000;
+}
+
+/* Alternate light and dark squares */
+.mini-board span:nth-child(16n + 1),
+.mini-board span:nth-child(16n + 3),
+.mini-board span:nth-child(16n + 5),
+.mini-board span:nth-child(16n + 7),
+.mini-board span:nth-child(16n + 10),
+.mini-board span:nth-child(16n + 12),
+.mini-board span:nth-child(16n + 14),
+.mini-board span:nth-child(16n + 16) {
+    background: #315943;
+}
+
+.mini-board span:nth-child(16n + 2),
+.mini-board span:nth-child(16n + 4),
+.mini-board span:nth-child(16n + 6),
+.mini-board span:nth-child(16n + 8),
+.mini-board span:nth-child(16n + 9),
+.mini-board span:nth-child(16n + 11),
+.mini-board span:nth-child(16n + 13),
+.mini-board span:nth-child(16n + 15) {
+    background: #172a20;
+}
+
+.board-caption {
+    margin-top: 17px;
+}
+
+/* Gentle floating animation */
+@keyframes float-board {
+    0%, 100% {
+        transform: translateY(0) rotate(1deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(-1deg);
+    }
+}
+
+/* ==============================
+   6. Learning path cards
+   ============================== */
+
+.path-section {
+    width: min(1180px, 86%);
+    margin: 20px auto 110px;
+    padding-top: 65px;
+    border-top: 1px solid var(--border);
+}
+
+.section-heading {
+    max-width: 650px;
+    margin-bottom: 35px;
+}
+
+.section-heading h2 {
+    margin: 12px 0;
+    font-size: clamp(28px, 4vw, 39px);
+    letter-spacing: -1px;
+}
+
+.section-heading p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.feature-card {
+    position: relative;
+    min-height: 275px;
+    padding: 26px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: linear-gradient(145deg, #111914, #0b0f0c);
+    transition: transform 0.3s, border-color 0.3s,
+                background 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(54, 217, 138, 0.5);
+    background: linear-gradient(145deg, #15241b, #0b0f0c);
+}
+
+.featured-card {
+    border-color: rgba(54, 217, 138, 0.3);
+}
+
+.card-number {
+    color: var(--muted);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.feature-icon {
+    margin: 20px 0 12px;
+    color: var(--green);
+    font-size: 31px;
+}
+
+.feature-card h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.feature-card p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+.card-status {
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--green);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+/* ==============================
+   7. Coming soon section
+   ============================== */
+
+.coming-section {
+    position: relative;
+    width: min(1180px, 86%);
+    margin: 0 auto 100px;
+    padding: 55px;
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    overflow: hidden;
+    border: 1px solid rgba(54, 217, 138, 0.22);
+    border-radius: 12px;
+    background:
+        radial-gradient(circle at 90% 20%,
+        rgba(54, 217, 138, 0.13), transparent 35%),
+        linear-gradient(120deg, #111914, #0a0e0b);
+}
+
+.coming-decoration {
+    color: rgba(54, 217, 138, 0.13);
+    font-size: clamp(100px, 18vw, 190px);
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.coming-content {
+    max-width: 620px;
+}
+
+.coming-content h2 {
+    margin: 15px 0;
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.2;
+    letter-spacing: -1.5px;
+}
+
+.coming-content > p {
+    max-width: 570px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 2;
+}
+
+.instructor {
+    margin-top: 27px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.instructor-mark {
+    width: 45px;
+    height: 45px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(54, 217, 138, 0.35);
+    border-radius: 50%;
+    background: rgba(54, 217, 138, 0.08);
+    color: var(--green);
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.instructor strong,
+.instructor span {
+    display: block;
+}
+
+.instructor strong {
+    font-size: 13px;
+}
+
+.instructor div:last-child span {
+    margin-top: 3px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.development-badge {
+    margin-top: 28px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 12px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--muted);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+/* ==============================
+   8. Footer
+   ============================== */
+
+.footer {
+    min-height: 100px;
+    padding: 25px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.footer-brand {
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/* ==============================
+   9. Responsive design
+   ============================== */
+
+/* Tablet and smaller screens */
+@media (max-width: 900px) {
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 45px;
+        padding: 65px 0;
+    }
+
+    .hero-content {
+        max-width: 650px;
+    }
+
+    .chess-art {
+        width: min(100%, 360px);
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .coming-section {
+        padding: 35px;
+    }
+
+    .coming-decoration {
+        font-size: 100px;
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 600px) {
+    .navbar {
+        padding: 16px 6%;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Hidden menu, shown by JavaScript */
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 20px 6%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        border-bottom: 1px solid var(--border);
+        background: #0b100d;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .hero,
+    .path-section,
+    .coming-section {
+        width: 88%;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 55px 0;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+        letter-spacing: -1.5px;
+    }
+
+    .hero-description {
+        font-size: 13px;
+    }
+
+    .hero-buttons {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .hero-buttons a {
+        text-align: center;
+    }
+
+    .chess-art {
+        padding: 12px;
+    }
+
+    .mini-board span {
+        font-size: 22px;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-card {
+        min-height: auto;
+    }
+
+    .coming-section {
+        padding: 30px 23px;
+    }
+
+    /* Hide the oversized decorative knight on mobile */
+    .coming-decoration {
+        display: none;
+    }
+
+    .coming-content h2 {
+        font-size: 35px;
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+    }
+}

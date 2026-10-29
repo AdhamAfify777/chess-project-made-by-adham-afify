@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Makes the page responsive on mobile and PC -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Opening Lab | ChessLens Academy</title>
+
+    <!-- Connect the CSS design file -->
+    <link rel="stylesheet" href="openings.css">
+
+    <!-- Connect the JavaScript file after HTML loads -->
+    <script src="openings.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Background decorative effects -->
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+
+    <!-- Navigation bar -->
+    <header class="navbar">
+        <a href="../front/index.html" class="brand">
+            <span class="brand-icon">♞</span>
+            <span>Movexa<span class="green-text">Chess</span></span>
+        </a>
+
+        <!-- Mobile navigation button -->
+        <button class="menu-toggle" id="menuToggle"
+                aria-label="Toggle navigation" aria-expanded="false">
+            ☰
+        </button>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="../front/index.html">Home</a>
+            <a href="../about/about.html">About</a>
+            <a href="../test/test.html">Test Yourself</a>
+            <a href="../learn/learn.html">Learn</a>
+            <a href="../opening/openings.html" class="active">Openings</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Hero section: the main introduction -->
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="eyebrow">
+                    <span class="status-dot"></span>
+                    THE OPENING LAB
+                </div>
+
+                <h1>
+                    Every great game<br>
+                    begins with <span>an idea.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Don't just memorize moves.
+                    Understand the ideas, recognize the plans,
+                    and build an opening repertoire that fits your style.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#coming-soon" class="primary-button">
+                        Explore the vision <span>↘</span>
+                    </a>
+
+                    <a href="#opening-path" class="secondary-button">
+                        The opening journey
+                    </a>
+                </div>
+
+                <div class="hero-note">
+                    <span>♟</span>
+                    <span>Understand the position. Own the game.</span>
+                </div>
+
+            </div>
+
+            <!-- Decorative chessboard made with text symbols -->
+            <div class="chess-art" aria-label="Decorative chessboard">
+
+                <div class="board-label">CHESSLENS / 001</div>
+
+                <div class="mini-board">
+                    <span>♜</span><span></span><span>♝</span><span></span>
+                    <span></span><span>♟</span><span></span><span>♚</span>
+
+                    <span></span><span>♟</span><span></span><span></span>
+                    <span>♞</span><span></span><span>♟</span><span></span>
+
+                    <span></span><span></span><span>♙</span><span></span>
+                    <span></span><span>♘</span><span></span><span></span>
+
+                    <span>♙</span><span></span><span></span><span>♕</span>
+                    <span></span><span></span><span>♙</span><span>♔</span>
+                </div>
+
+                <div class="board-caption">
+                    <span>POSITION 001</span>
+                    <span class="green-text">IDEAS OVER MOVES.</span>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Opening learning categories -->
+        <section class="path-section" id="opening-path">
+
+            <div class="section-heading">
+                <span class="section-label">WHAT'S COMING</span>
+                <h2>A better way to learn openings.</h2>
+                <p>
+                    Build understanding step by step, not just a list of moves.
+                </p>
+            </div>
+
+            <div class="feature-grid">
+
+                <!-- Feature card 1 -->
+                <article class="feature-card">
+                    <span class="card-number">01 / IDEAS</span>
+                    <div class="feature-icon">⌘</div>
+                    <h3>Opening Principles</h3>
+                    <p>
+                        Learn development, king safety, central control,
+                        and the purpose behind your first moves.
+                    </p>
+                    <span class="card-status">COMING SOON</span>
+                </article>
+
+                <!-- Feature card 2 -->
+                <article class="feature-card featured-card">
+                    <span class="card-number">02 / REPERTOIRE</span>
+                    <div class="feature-icon">♞</div>
+                    <h3>Build Your Repertoire</h3>
+                    <p>
+                        Discover opening systems, understand typical plans,
+                        and find lines that suit your playing style.
+                    </p>
+                    <span class="card-status">COMING SOON</span>
+                </article>
+
+                <!-- Feature card 3 -->
+                <article class="feature-card">
+                    <span class="card-number">03 / PRACTICE</span>
+                    <div class="feature-icon">♟</div>
+                    <h3>Ideas in Action</h3>
+                    <p>
+                        Explore model positions, common mistakes,
+                        and practical examples from real games.
+                    </p>
+                    <span class="card-status">COMING SOON</span>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Main coming soon section -->
+        <section class="coming-section" id="coming-soon">
+
+            <div class="coming-decoration">♞</div>
+
+            <div class="coming-content">
+                <span class="section-label">IN DEVELOPMENT</span>
+
+                <h2>Your opening journey<br>starts <span>soon.</span></h2>
+
+                <p>
+                    Opening lessons are being prepared for ChessLens Academy.
+                    Each lesson will focus on understanding the position,
+                    the plans, and the ideas behind the moves.
+                </p>
+
+                <div class="instructor">
+                    <div class="instructor-mark">AA</div>
+                    <div>
+                        <strong>Lessons by Adham Afify</strong>
+                        <span>Learn the ideas. Play with a plan.</span>
+                    </div>
+                </div>
+
+                <span class="development-badge">
+                    <span class="status-dot"></span>
+                    THE LAB IS BEING BUILT
+                </span>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <a href="../front/index.html" class="footer-brand">
+            Movexa<span class="green-text">Chess</span>
+        </a>
+
+        <p>Think deeper. Play smarter.</p>
+
+        <span>© <span id="currentYear"></span>MovexaChess Academy</span>
+    </footer>
+
+</body>
+</html>
